@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import WeatherDisp from "./components/WeatherDisp";
+import CurrentWeather from "./components/CurrentWeather";
+import HourWeather from "./components/HourWeather";
+
 import { Input, Button } from "@material-ui/core";
 const API_KEY = process.env.REACT_APP_api_key;
 
@@ -34,27 +37,23 @@ function App() {
       });
     };
 
-  if (zipEntered ===false) {
+ 
+
+ // <pre>{JSON.stringify(weather, undefined, 4)}</pre>
+ if (zipEntered ===false) {
+  return(
+  <div>
+  <Input type="number" value={zipCode} onChange={handleZipChange} />
+  <Button onClick={fetchWeather}>Fetchh Zip!</Button>
+  </div>
+  )}
+  else if(weather){
     return(
-    <div>
-    <Input type="number" value={zipCode} onChange={handleZipChange} />
-    <Button onClick={fetchWeather}>Go!</Button>
+    <div style={{ textAlign: "center" }}>
+    <CurrentWeather weather = {weather}></CurrentWeather>
+    <WeatherDisp weather = {weather}></WeatherDisp> 
     </div>
     )
-  }
-
-  if(weather){
-  return (
-    <div style={{ textAlign: "center" }}>
-    <pre>{JSON.stringify(weather, undefined, 4)}</pre>
-
-      <WeatherDisp
-        weather = {weather}
-      > 
-      </WeatherDisp> 
-    </div>
-
-    );
   }else{
     return (<h1>Loading</h1>)
   }
