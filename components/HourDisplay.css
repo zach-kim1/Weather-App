@@ -1,0 +1,27 @@
+.hourlyDisplay{ 
+    display: flex;
+    border: 2px solid #ededed;
+    flex-direction: row;
+    margin-left: 25px;    
+    margin-right: 25px;
+    width: 95vw;
+    margin-bottom: 12px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.time {
+    margin-left: 0%;    
+}
+
+.temp {
+    margin-left: 40%;
+    text-align: center;
+}
+
+.main {
+    margin-left: 40%;
+    color: grey;
+    
+}
+

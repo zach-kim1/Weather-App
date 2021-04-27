@@ -1,7 +1,6 @@
 import React, {  useState } from "react";
 
-import "./HourDisplay.css"
-export default function HourDisplay({ temp, main, time }) {
+export default function WeekDisplay({ temp, main, time }) {
 
     return (
         <div className="hourlyDisplay">
