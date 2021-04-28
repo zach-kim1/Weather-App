@@ -1,14 +1,13 @@
-import React, {  useState } from "react";
+import React from "react";
 import WeekDisplay from './WeekDisplay'
 
-export default function WeekWeather({hourly}) {
-    var today = new Date()
+export default function WeekWeather({daily}) {
 
 return (
     <div>
         
         <div>
-            {hourly.map((hour, i) => <WeekDisplay temp={hour.temp} main={hour.weather[0].main} time={1 + i}/>)}
+            {daily.map((day, i) => <WeekDisplay maxtemp={day.temp.max} mintemp = {day.temp.min} main={day.weather[0].main} time={ i}/>)}
         </div>
 
     </div>

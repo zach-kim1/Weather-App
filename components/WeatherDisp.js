@@ -9,7 +9,8 @@ export default function WeatherDisp({weather}) {
   const [Hrweather, setHrWeather] = useState(null);
   const [HrDayToggle, setHrDayToggle] = useState(false);
 
-  const fetch2DayWeather = () =>{
+
+  function fetch2DayWeather(){
     const url = new URL("https://api.openweathermap.org/data/2.5/onecall")
     url.searchParams.append("appid", API_KEY)
     url.searchParams.append("lon", weather.coord.lon)
@@ -27,36 +28,41 @@ export default function WeatherDisp({weather}) {
 if(!Hrweather){
     return(
       <div>
+      <ButtonGroup align = "center">
         <Button
-        onClick = {fetch2DayWeather}
+        onClick = {()=>{setHrDayToggle(false); fetch2DayWeather();}}
         >
         Hourly
         </Button>
         <Button
-        onClick = {fetch2DayWeather}>
+        onClick = {()=>{setHrDayToggle(true); fetch2DayWeather();}}>
         Daily
         </Button>
-          
+        </ButtonGroup>  
 
       </div>
     )   
     }else if(Hrweather){
       return(
         <div>
+          <div align="center">
 
-        <ButtonGroup>
+        <ButtonGroup
+        align = "center"
+        >
         <Button
-        onClick = {() =>setHrDayToggle(false)}>
+        textAlign = "center"
+        onClick =  {()=>{setHrDayToggle(false); fetch2DayWeather();}}>
         Hourly
         </Button>
         <Button
-        onClick = {() =>setHrDayToggle(true)}>
+        textAlign = "center"
+        onClick = {()=>{setHrDayToggle(true); fetch2DayWeather();}}>
         Daily
         </Button>
-        </ButtonGroup>
-        <HourWeather hourly = {Hrweather.hourly}></HourWeather>
-     
-      
+        </ButtonGroup>     
+      </div>
+      <div>{HrDayToggle ? (Hrweather ? <WeekWeather daily={Hrweather.daily} /> : null) : (Hrweather ? <HourWeather hourly={Hrweather.hourly} /> : null)}  </div>
       </div>
       )
     }
