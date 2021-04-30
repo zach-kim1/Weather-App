@@ -20,10 +20,10 @@ export default function HourDisplay({ temp, main, time }) {
     }, [main])
     return (
         <div className="hourlyDisplay">
-        <p className="time" textAlign = "center">{time} Hours from now </p>
-        <p className="temp" textAlign = "center"> {temp}° F</p>
+        <p className="time" >{time} Hours from now </p>
+        <p className="temp" > {temp}° F</p>
         <p className ="icon">{icon}</p>
-        <p className="main" textAlign = "center">{main.toUpperCase()}</p>
+        <p className="main" >{main.toUpperCase()}</p>
         
     </div>
     )

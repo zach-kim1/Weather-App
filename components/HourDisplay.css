@@ -1,35 +1,10 @@
 
-.hourlyDisplay{ 
-    display: flex;
+.hourlyDisplay {
     border: 2px solid #ededed;
-    flex-direction: row;
     margin-left: 25px;    
     margin-right: 25px;
-    width: 95vw;
-    margin-bottom: 12px;
-    padding: 5px;
-    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
 }
 
-
-.time {
-    margin-left: left;
-    white-space: nowrap
-}   
-
-.temp {
-    margin-left: 37vw;
-    white-space: nowrap
-}
-.icon{
-    margin-left: 10vw;
-
-}
-
-.main {
-    margin-left: 30vw;
-    color: grey;
-    white-space: nowrap
-    
-}
 
