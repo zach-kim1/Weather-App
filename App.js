@@ -9,7 +9,7 @@ const API_KEY = process.env.REACT_APP_api_key;
 
 function App() {
   const [zipEntered,setZipStatus] = useState(false)
-  const [zipCode, setzipCode] = useState(0);
+  const [zipCode, setzipCode] = useState(null);
   const [weather, setWeather] = useState(null);
   const [cityEntered,setCityStatus] = useState(false)
   const [city, setCity] = useState("");
@@ -71,10 +71,15 @@ function App() {
  // <pre>{JSON.stringify(weather, undefined, 4)}</pre>
  if (zipEntered ===false &&cityEntered===false) {
   return(
+    <div>
+  <h1 align ="center">Whats the weather?</h1>
   <div style = {{display: 'flex', flexDirection: "column", justifyContent: 'center'}}>
-    <div style = {{display: 'flex', justifyContent: 'center'}}><Input  type="number" value={zipCode} onChange={handleZipChange} /> Enter Zip</div>
-    <div style = {{display: 'flex', justifyContent: 'center'}}><Input  type="string" value={city} onChange={handleCityChange} />Enter City</div>
-    <Button align="center" onClick={getWeather}>Fetch Weather!</Button>
+    <div style = {{display: 'flex', justifyContent: 'center'}}><Input placeholder="Enter Zip"  type="number" value={zipCode} onChange={handleZipChange} /></div>
+    <div style = {{display: 'flex', justifyContent: 'center'}}><Input placeholder="Enter City" type="string" value={city} onChange={handleCityChange} /></div>
+  </div>
+  <div align= "center" >
+  <Button align="center" variant="outlined" color="primary" onClick={getWeather}>Fetch Weather!</Button>
+  </div>
   </div>
   )}
   else if(weather){

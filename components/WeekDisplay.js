@@ -17,12 +17,12 @@ export default function WeekDisplay({ maxtemp, main, time,mintemp }) {
         }
     }, [main])
     return (
-        <div className="hourlyDisplay">
-        <p className="time" textAlign = "center">{time} Day from Today </p>
-        <p className="maxtemp" textAlign = "center">Max Temp: {maxtemp} ° F</p>
-        <p className="mintemp" textAlign = "center">Min Temp: {mintemp} ° F</p>
+        <div className="weeklyDisplay">
+        <p className="time" >{time} Day from Today </p>
+        <p className="maxtemp" >Max Temp: {maxtemp} ° F</p>
+        <p className="mintemp" >Min Temp: {mintemp} ° F</p>
         <p className ="icon">{icon}</p>
-        <p className="main" textAlign = "center">{main}</p>
+        <p className="main" >{main}</p>
         
     </div>
     )
