@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import CloudIcon from '@material-ui/icons/Cloud';
 import Grain from '@material-ui/icons/Grain';
-import "./HourDisplay.css"
+import "./styles/HourDisplay.css"
 export default function HourDisplay({ temp, main, time }) {
     const [icon, setIcon] = useState("")
 
