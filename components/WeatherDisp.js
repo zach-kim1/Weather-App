@@ -42,7 +42,8 @@ if(!Hrweather){
 
       </div>
     )   
-    }else if(Hrweather){
+    }
+
       return(
         <div>
           <div align="center">
@@ -65,5 +66,5 @@ if(!Hrweather){
       <div>{HrDayToggle ? (Hrweather ? <WeekWeather daily={Hrweather.daily} /> : null) : (Hrweather ? <HourWeather hourly={Hrweather.hourly} /> : null)}  </div>
       </div>
       )
-    }
+    
 }

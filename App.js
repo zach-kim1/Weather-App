@@ -82,7 +82,8 @@ function App() {
   </div>
   </div>
   )}
-  else if(weather){
+  
+   if(weather){
     return(
     <div>
     <div style={{ textAlign: "center" }}>
@@ -94,9 +95,10 @@ function App() {
     </div>
     </div>
     )
-  }else{
-    return (<h1>Loading</h1>)
   }
+
+    return <h1>Loading</h1>;
+  
   
 }
 export default App;
